@@ -176,6 +176,12 @@
       <DependentUpon>Wwdatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\backgrounds\Camp.png" />
+    <Content Include="Content\backgrounds\Prison.png" />
+    <Content Include="Content\bgm\Camp theme.mp3" />
+    <Content Include="Content\bgm\Game Of Thrones Official Show Open %28HBO%29.mp3" />
+    <Content Include="Content\bgm\Peace theme.mp3" />
+    <Content Include="Content\bgm\The Witcher 3 Wild Hunt OST - Sword of Destiny - Main Theme.mp3" />
     <Content Include="Content\bgm_crystal_waver.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -446,6 +452,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\characters\" />
+    <Folder Include="Content\sounds\" />
+    <Folder Include="Content\ui\" />
     <Folder Include="Controllers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
