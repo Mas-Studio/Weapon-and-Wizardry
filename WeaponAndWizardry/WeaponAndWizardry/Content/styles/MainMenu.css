@@ -1,0 +1,111 @@
+﻿/**
+ * Module: MainMenu.css
+ * Team: Group7
+ * Description: Own customized css file for mainmenu
+ * Author: 
+ *  	 Name: Dongwon(Shawn) Kim    Date: 2017-11-06
+ * Modified by:	
+ *  	 Name: N/A  Change:	N/A Date: N/A
+ * Based on:
+ * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+**/
+#MainContent_Button_New_Game {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height:55px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#MainContent_Button_New_Game:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
+
+#MainContent_Button_Load_Game {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#MainContent_Button_Load_Game:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
+
+#MainContent_Button_Credits {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#MainContent_Button_Credits:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
+
+#MainContent_Button_Load_Back:hover {
+    background: url(/Content/Images/ui/buttonPressed.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #ffd800;
+}
+
+#MainContent_Button_Load_Back {
+    background: url(/Content/Images/ui/buttonNormal.png) no-repeat 0 0;
+    border: 0;
+    background-size: 100%;
+    width: 20%;
+    height: 55px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
+}
+
+.center_text {
+    text-align: center;
+}

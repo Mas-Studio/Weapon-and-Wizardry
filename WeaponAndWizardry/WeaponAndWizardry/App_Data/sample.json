@@ -1,0 +1,55 @@
+{
+    "id": "test0001",
+    "character": {
+        "hp": 100,
+        "morality": 50,
+        "isdead": "false",
+        "str": 100,
+        "dex": 101,
+        "int": 102,
+        "luk": 103,
+        "gold": 104,
+    },
+    "savedatas": [
+        {
+            "id": 0,
+            "scenarioid": 1,
+            "choice": 1
+        }
+        {
+            "id": 1,
+            "scenarioid": 2,
+            "choice": 2
+        }
+        {
+            "id": 2,
+            "scenarioid": 3,
+            "choice": 1
+        }
+        {
+            "id": 3,
+            "scenarioid": 5,
+            "choice": 1
+        }
+        {
+            "id": 4,
+            "scenarioid": 6,
+            "choice": 1
+        }
+        {
+            "id": 5,
+            "scenarioid": 7,
+            "choice": 1
+        }
+        {
+            "id": 6,
+            "scenarioid": 8,
+            "choice": 1
+        }
+        {
+            "id": 7,
+            "scenarioid": 9,
+            "choice": 1
+        }  
+    ]
+}

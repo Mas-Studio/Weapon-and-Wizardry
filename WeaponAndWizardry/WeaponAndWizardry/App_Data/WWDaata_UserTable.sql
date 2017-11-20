@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Users]
+(
+	[Id] VARCHAR(10) NOT NULL PRIMARY KEY, 
+    [Savedata] VARCHAR(MAX) NULL
+)
