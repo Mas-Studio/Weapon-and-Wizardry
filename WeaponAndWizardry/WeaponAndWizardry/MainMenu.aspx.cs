@@ -46,7 +46,7 @@ namespace WeaponAndWizardry
         /// <param name="e">events arguement</param>
         protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
-            Server.Transfer("LoadGame.aspx", false);
+            Response.Redirect("~/LoadGame.aspx", true);
         }
     }
 }

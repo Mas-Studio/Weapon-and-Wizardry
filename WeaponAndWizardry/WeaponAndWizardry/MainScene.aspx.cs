@@ -44,6 +44,8 @@ namespace WeaponAndWizardry
                 SessionHandler.ScriptEngine.UpdateReferences(ImageDisplay, TextDisplay, choiceButtons, stats);
             }
             SessionHandler.MainScene = this;
+
+           
         }
 
         /// <summary>
@@ -93,7 +95,8 @@ namespace WeaponAndWizardry
             string save = System.IO.File.ReadAllText("c:\\save.txt", System.Text.Encoding.ASCII); // Do database load
             Save s = Newtonsoft.Json.JsonConvert.DeserializeObject<Save>(save);
             SessionHandler.ScriptEngine.LoadGame(s);
-            Server.Transfer("LoadGame.aspx", false);
+            //Response.Redirect("~/LoadGame.aspx");
         }
+        
     }
 }

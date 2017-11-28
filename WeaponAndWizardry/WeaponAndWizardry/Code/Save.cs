@@ -21,6 +21,7 @@ namespace WeaponAndWizardry.Code
                 Id = Guid.NewGuid();
             }
             ChoicesPicked = new List<uint>();
+
             if (choicesPicked.Count > 0)
             {
                 foreach (uint choice in choicesPicked)

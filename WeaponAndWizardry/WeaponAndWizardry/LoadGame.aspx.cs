@@ -20,16 +20,32 @@ namespace WeaponAndWizardry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                try { 
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+                } catch (Exception ex)
+                {
 
+                }
+            }
         }
 
         protected void Button_Load_Back_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Request.UrlReferrer.ToString());
+            string previousPage = (string)Session["PreviousPageForLoad"];
+
+            object refUrl = ViewState["RefUrl"];
+
+            if (refUrl != null) { 
+                Response.Redirect((string)refUrl, false);
+            }
         }
 
         protected void Button_Load_Game_Click(object sender, EventArgs e)
         {
+            string guid = this.TextBox_SaveDataCode.ToString();
+
 
         }
     }
