@@ -8,11 +8,7 @@
                 <img alt="logo" longdesc="MA's Weapons&amp;Wizardry" src="Content/Images/ui/logo_3.png" style="width: 100%;" />
             </div>
         </div>
-        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-        <script>
-            sound = window.open("SoundPlayer.html", "name", "height=400,width=500");
-            sound.blur();
-        </script>
+
         <table style="width: 100%">
             <tr><td><div class="row"></div></td></tr>
             <tr><td><div class="row"></div></td></tr>
@@ -32,11 +28,10 @@
             <tr>
                 <td style="width: 100%" align="center">
                     <br />
-                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" OnClientClick="playSound(); return false;" class="playSound"/>
+                    <asp:Button ID="Button_Credits" CssClass="image_button_credits" runat="server" Text="Credits" PostBackUrl="~/Credits.aspx"/>
                 </td>
             </tr>
             <tr><td><div class="row"><br /><br /><br /><br /><br /><br /><br /></div></td></tr>
         </table>
-        
     </div>
 </asp:Content>

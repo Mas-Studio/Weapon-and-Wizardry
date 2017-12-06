@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNet.SignalR.Hubs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,12 +9,9 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// A wrapper to allow safe use of Session variables
-    /// Author: 
-    ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public static class SessionHandler
     {
-        #region Constant Strings
         /// <summary>
         /// Strongly-typed Script Engine string index
         /// </summary>
@@ -58,17 +53,6 @@ namespace WeaponAndWizardry.Code
         private const string _stats = "stats";
 
         /// <summary>
-        /// Strongly-typed Sound Hub string index
-        /// </summary>
-        private const string _clientHubConnectionId = "soundhub";
-
-        /// <summary>
-        /// Strongly-typed string index for a soundhub clients
-        /// </summary>
-        private const string _clients = "clients";
-        #endregion Constant Strings
-
-        /// <summary>
         /// Returns the Session object of type Script Engine
         /// </summary>
         public static WebGameEngine ScriptEngine
@@ -87,29 +71,6 @@ namespace WeaponAndWizardry.Code
             set
             {
                 HttpContext.Current.Session[_engine] = value;
-            }
-        }
-
-        /// <summary>
-        /// This is stores the reference to all connected clients
-        /// for the sounderplayer SingalR
-        /// </summary>
-        public static IHubConnectionContext<dynamic> Clients
-        {
-            get
-            {
-                if (HttpContext.Current.Session[_clients] == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return (IHubConnectionContext<dynamic>)HttpContext.Current.Session[_clients];
-                }
-            }
-            set
-            {
-                HttpContext.Current.Session[_clients] = value;
             }
         }
 
@@ -134,78 +95,6 @@ namespace WeaponAndWizardry.Code
             set
             {
                 HttpContext.Current.Session[_mainScene] = value;
-            }
-        }
-
-        /// <summary>
-        /// Returns the Session object of type string.
-        /// The connection ID for the SoundPlayerHub
-        /// </summary>
-        public static string SoundHubConnectionId
-        {
-            get
-            {
-                // If from SignalR connection
-                if (HttpContext.Current.Session == null)
-                {
-                    try
-                    {
-                        string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
-                        if (connectionid.Length > 0)
-                        {
-
-                            return connectionid[0];
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        return null;
-                    }
-                }
-                else
-                {
-                    if (String.IsNullOrWhiteSpace((string)HttpContext.Current.Session[_clientHubConnectionId]))
-                    {
-
-                        try
-                        {
-                            string[] connectionid = System.IO.File.ReadAllLines(".\\tmp.txt");
-                            if (connectionid.Length > 0)
-                            {
-                                HttpContext.Current.Session[_clientHubConnectionId] = connectionid[0];
-                                return connectionid[0];
-                            }
-                            else
-                            {
-                                return null;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            return null;
-                        }
-                    }
-                    else
-                    {
-                        return (string)HttpContext.Current.Session[_clientHubConnectionId];
-                    }
-                }
-            }
-            set
-            {
-                // If from SignalR connection
-                if (HttpContext.Current.Session == null)
-                {
-                    System.IO.File.WriteAllText(".\\tmp.txt", value);
-                }
-                else
-                {
-                    HttpContext.Current.Session[_clientHubConnectionId] = value;
-                }
             }
         }
 
@@ -393,15 +282,7 @@ namespace WeaponAndWizardry.Code
         /// </summary>
         public static void ClearSession()
         {
-            ScriptEngine = null;
-            MainScene = null;
-            SoundHubConnectionId = null;
-            ImageDisplay = null;
-            TextDisplay = null;
-            Stats = null;
-            ChoiceButtons = null;
-            ChoicesPicked = null;
-            Guid = Guid.Empty;
+            HttpContext.Current.Session.Clear();
         }
     }
 }

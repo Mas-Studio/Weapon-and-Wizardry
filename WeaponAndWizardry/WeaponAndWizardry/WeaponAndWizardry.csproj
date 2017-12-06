@@ -44,14 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -63,6 +55,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -265,46 +275,12 @@
     <Content Include="Content\images\backgrounds\84.png" />
     <Content Include="Content\images\backgrounds\85.png" />
     <Content Include="Content\images\backgrounds\86.png" />
-    <Content Include="Content\images\backgrounds\87.png" />
-    <Content Include="Content\images\backgrounds\88.png" />
     <Content Include="Content\images\backgrounds\9.png" />
     <Content Include="Content\images\backgrounds\Camp.png" />
-    <Content Include="Content\images\backgrounds\gameover.png" />
     <Content Include="Content\images\backgrounds\main_menu_bg.png" />
-    <Content Include="Content\images\characters\Albus_angry.png" />
-    <Content Include="Content\images\characters\Albus_happy.png" />
-    <Content Include="Content\images\characters\Albus_neutral.png" />
-    <Content Include="Content\images\characters\Albus_surprised.png" />
-    <Content Include="Content\images\characters\Alice_angry.png" />
-    <Content Include="Content\images\characters\Alice_happy.png" />
-    <Content Include="Content\images\characters\Alice_neutral.png" />
-    <Content Include="Content\images\characters\Alice_smile.png" />
-    <Content Include="Content\images\characters\Alice_surprise.png" />
-    <Content Include="Content\images\characters\Alice_talking.png" />
-    <Content Include="Content\images\characters\Avatar1.jpg" />
-    <Content Include="Content\images\characters\BanditChief_angry1.png" />
-    <Content Include="Content\images\characters\BanditChief_angry2.png" />
-    <Content Include="Content\images\characters\BanditChief_angry3.png" />
-    <Content Include="Content\images\characters\BanditChief_happy1.png" />
-    <Content Include="Content\images\characters\BanditChief_happy2.png" />
-    <Content Include="Content\images\characters\BanditChief_happy3.png" />
-    <Content Include="Content\images\characters\BanditChief_neutral.png" />
-    <Content Include="Content\images\characters\BanditChief_surprised.png" />
-    <Content Include="Content\images\characters\Damian_angry.png" />
-    <Content Include="Content\images\characters\Damian_blush.png" />
-    <Content Include="Content\images\characters\Damian_embarass.png" />
-    <Content Include="Content\images\characters\Damian_happy.png" />
-    <Content Include="Content\images\characters\Damian_neutral.png" />
-    <Content Include="Content\images\characters\Damian_shouting.png" />
     <Content Include="Content\images\characters\Elder_happy.png" />
     <Content Include="Content\images\characters\Elder_neutral.png" />
     <Content Include="Content\images\characters\Elder_surprised.png" />
-    <Content Include="Content\images\characters\Gnoll_angry.png" />
-    <Content Include="Content\images\characters\Gnoll_defeat.png" />
-    <Content Include="Content\images\characters\Gnoll_happy.png" />
-    <Content Include="Content\images\characters\Gnoll_neutral.png" />
-    <Content Include="Content\images\characters\Goddess_happy.png" />
-    <Content Include="Content\images\characters\Goddess_surprise.png" />
     <Content Include="Content\images\characters\Greengoblin_neutral.png" />
     <Content Include="Content\images\characters\Greengoblin_scared.png" />
     <Content Include="Content\images\characters\Guard.png" />
@@ -316,12 +292,6 @@
     <Content Include="Content\images\characters\Ilias_closed2.png" />
     <Content Include="Content\images\characters\Ilias_happy.png" />
     <Content Include="Content\images\characters\Ilias_neutral.png" />
-    <Content Include="Content\images\characters\Illia.png" />
-    <Content Include="Content\images\characters\MChild_angry.png" />
-    <Content Include="Content\images\characters\MChild_happy.png" />
-    <Content Include="Content\images\characters\MChild_neutral.png" />
-    <Content Include="Content\images\characters\MChild_smirk.png" />
-    <Content Include="Content\images\characters\MChild_surprised.png" />
     <Content Include="Content\images\characters\Merchant_angry1.png" />
     <Content Include="Content\images\characters\Merchant_angry2.png" />
     <Content Include="Content\images\characters\Merchant_happy1.png" />
@@ -331,14 +301,8 @@
     <Content Include="Content\images\characters\Merchant_scared.png" />
     <Content Include="Content\images\characters\Merchant_sly1.png" />
     <Content Include="Content\images\characters\Merchant_sly2.png" />
-    <Content Include="Content\images\characters\Minotaur_defeat.png" />
-    <Content Include="Content\images\characters\Minotaur_neutral.png" />
     <Content Include="Content\images\characters\Monster_neutral.png" />
     <Content Include="Content\images\characters\Monster_scared.png" />
-    <Content Include="Content\images\characters\Princesss_blush.png" />
-    <Content Include="Content\images\characters\Princess_happy.png" />
-    <Content Include="Content\images\characters\Princess_kiss.png" />
-    <Content Include="Content\images\characters\Princess_neutral.png" />
     <Content Include="Content\images\characters\Redgoblin_neutral.png" />
     <Content Include="Content\images\characters\Redgoblin_scared.png" />
     <Content Include="Content\images\characters\Soldier_frustrated.png" />
@@ -346,32 +310,15 @@
     <Content Include="Content\images\characters\Soldier_neutral.png" />
     <Content Include="Content\images\characters\Soldier_scared1.png" />
     <Content Include="Content\images\characters\Soldier_scared2.png" />
-    <Content Include="Content\images\characters\Son_neutral.png" />
-    <Content Include="Content\images\characters\Spider_defeat.png" />
-    <Content Include="Content\images\characters\Spider_happy.png" />
-    <Content Include="Content\images\characters\Spider_neutral.png" />
     <Content Include="Content\images\characters\Yellowgoblin_neutral.png" />
     <Content Include="Content\images\characters\Yellowgoblin_scared.png" />
-    <Content Include="Content\sounds\bgm\BattleTheme.mp3" />
-    <Content Include="Content\sounds\bgm\BossBuildUpTheme.mp3" />
-    <Content Include="Content\sounds\bgm\BossTheme.mp3" />
     <Content Include="Content\sounds\bgm\CampTheme.mp3" />
-    <Content Include="Content\sounds\bgm\CastleTheme.mp3" />
-    <Content Include="Content\sounds\bgm\CrisisTheme.mp3" />
-    <Content Include="Content\sounds\bgm\IliasTheme.mp3" />
-    <Content Include="Content\sounds\bgm\MysteryTheme.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme1.mp3" />
     <Content Include="Content\sounds\bgm\OpeningTheme2.mp3" />
     <Content Include="Content\sounds\bgm\PeaceTheme.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\sounds\bgm\TownTheme.mp3" />
-    <Content Include="Content\sounds\bgm\TravelTheme.mp3" />
-    <Content Include="Content\sounds\bgm\VictoryTheme.mp3" />
-    <Content Include="Content\sounds\bgm\VillageTheme.mp3" />
-    <Content Include="Content\sounds\sfx\explode.wav" />
-    <Content Include="Content\sounds\sfx\helpme.mp3" />
     <Content Include="Content\styles\MainMenu.css" />
     <Content Include="Content\Images\ui\buttonHighLight.png" />
     <Content Include="Content\Images\ui\buttonNormal.png" />
@@ -397,9 +344,11 @@
       <DependentUpon>SaveDataModel.edmx</DependentUpon>
       <LastGenOutput>SaveDataModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
-    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
-    <Content Include="Scripts\soundplayer.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\sounds.js" />
     <EntityDeploy Include="Models\SaveDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -408,7 +357,7 @@
     <Content Include="Models\SaveDataModel.edmx.diagram">
       <DependentUpon>SaveDataModel.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\WeaponAndWizardry20171120084543 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WeaponAndWizardry20171205033847 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -442,7 +391,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="SoundPlayer.html" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -452,6 +400,10 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -565,17 +517,17 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Code\Choices.cs" />
     <Compile Include="Code\Save.cs" />
-    <Compile Include="Code\Scripts\EndingScripts.cs" />
-    <Compile Include="Code\WebGameEngine.cs" />
+    <Compile Include="Code\ScriptEngine.cs" />
     <Compile Include="Code\Scripts\PrologueScripts.cs" />
-    <Compile Include="Code\Scripts\ChapterOneScripts.cs" />
     <Compile Include="Code\Scripts\Scripts.cs" />
     <Compile Include="Code\SessionHandler.cs" />
-    <Compile Include="Code\Sounds.cs" />
-    <Compile Include="Code\SoundPlayerHub.cs" />
     <Compile Include="Code\Utility.cs" />
+    <Compile Include="Code\UsersHandler.cs" />
     <Compile Include="Credits.aspx.cs">
       <DependentUpon>Credits.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -629,7 +581,6 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>SaveDataModel.tt</DependentUpon>
     </Compile>
-    <Content Include="Code\UsersSaveDataController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -666,8 +617,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\bgm\" />
     <Folder Include="Content\ui\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
