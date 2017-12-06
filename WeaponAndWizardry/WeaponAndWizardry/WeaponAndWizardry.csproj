@@ -357,7 +357,7 @@
     <Content Include="Models\SaveDataModel.edmx.diagram">
       <DependentUpon>SaveDataModel.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\WeaponAndWizardry20171120084543 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WeaponAndWizardry20171205033847 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
