@@ -79,9 +79,9 @@ namespace WeaponAndWizardry.Code
         /// </summary>
         public Save SaveGame()
         {
-            Save save = new Save(SessionHandler.Guid, SessionHandler.ChoicesPicked);
+            Save save = new Save(Guid.NewGuid(), SessionHandler.ChoicesPicked);
             string savestring = Newtonsoft.Json.JsonConvert.SerializeObject(save);
-            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/PlayerSaveData/" + save.Id), savestring); // Do database save
+            System.IO.File.WriteAllText(Utility.PlayerSaveDataUrl + save.Id, savestring); // Do database save
             return save;
         }
 

@@ -2,7 +2,7 @@
 
 var effectPlaying;
 var backgroundPlaying;
-var loadCount = 0; 
+var loadCount = 0;
 var bgm = [
     { src: "content/sounds/bgm/OpeningTheme1.mp3", id: "content/sounds/bgm/OpeningTheme1.mp3" },
     { src: "content/sounds/bgm/OpeningTheme2.mp3", id: "content/sounds/bgm/OpeningTheme2.mp3" },
@@ -48,8 +48,7 @@ function handleLoad(event) {
         localStorage.setItem("percentLoaded", percent);
     }
     console.log("Loading: " + event.src);
-    if(loadCount >= 5)
-    {
+    if (loadCount >= 5) {
         console.log("load complete!");
         localStorage.setItem("soundLoaded", "true");
     }
@@ -128,7 +127,9 @@ $(function () {
     $.connection.hub.start().done(function () {
         // Call the Send method on the hub.
         setTimeout(function () {
-            player.server.registerClient();
+            var sessionid = localStorage.getItem("sessionid");
+            console.log("Establishing connection with session id: " + sessionid);
+            player.server.registerClient(sessionid);
         }, 1000);
     });
 });

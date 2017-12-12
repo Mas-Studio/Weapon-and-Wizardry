@@ -8,7 +8,7 @@ namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// SignalR Hub Class for Sending Commands to clients to play a sound.
-    /// Author: 
+    /// Author:
     ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public class SoundPlayerHub : Hub
@@ -16,9 +16,12 @@ namespace WeaponAndWizardry.Code
         /// <summary>
         /// A method called by the client to register itself to this session.
         /// </summary>
-        public void RegisterClient()
+        public void RegisterClient(string sessionId)
         {
-            SessionHandler.SoundHubConnectionId = Context.ConnectionId;
+            if (System.IO.File.Exists(Utility.TempDataUrl + sessionId))
+            {
+                SessionHandler.LinkSessionIdWithConnectonId(sessionId, Context.ConnectionId);
+            }
         }
     }
 }

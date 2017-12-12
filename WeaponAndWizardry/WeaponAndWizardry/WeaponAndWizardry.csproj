@@ -682,6 +682,7 @@
     <Folder Include="Content\ui\" />
     <Folder Include="Controllers\" />
     <Folder Include="PlayerSaveData\" />
+    <Folder Include="TempData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

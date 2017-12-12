@@ -28,6 +28,7 @@ namespace WeaponAndWizardry
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Title = "MA's Weapon & Wizardry";
+            Response.AppendCookie(new HttpCookie("sessionid", SessionHandler.SessionId.ToString()));
         }
 
         /// <summary>

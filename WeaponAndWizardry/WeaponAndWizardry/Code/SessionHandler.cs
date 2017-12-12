@@ -6,17 +6,19 @@ using System.Web;
 using System.Web.SessionState;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace WeaponAndWizardry.Code
 {
     /// <summary>
     /// A wrapper to allow safe use of Session variables
-    /// Author: 
+    /// Author:
     ///     Name: Jia Qi Lee (George) Date: 2017-11-15
     /// </summary>
     public static class SessionHandler
     {
         #region Constant Strings
+
         /// <summary>
         /// Strongly-typed Script Engine string index
         /// </summary>
@@ -36,7 +38,7 @@ namespace WeaponAndWizardry.Code
         /// Strongly-typed Choice Buttons string index
         /// </summary>
         private const string _choiceButtons = "choicebuttons";
-        
+
         /// <summary>
         /// Strongly-typed Main Scene string index
         /// </summary>
@@ -81,6 +83,7 @@ namespace WeaponAndWizardry.Code
         /// Strongly-typed string index for if the game is loading boolean
         /// </summary>
         private const string _loading = "";
+
         #endregion Constant Strings
 
         /// <summary>
@@ -226,15 +229,14 @@ namespace WeaponAndWizardry.Code
         {
             get
             {
-                // If from SignalR connection
-                if (HttpContext.Current.Session == null)
+                if (String.IsNullOrWhiteSpace((string)HttpContext.Current.Session[_clientHubConnectionId]))
                 {
                     try
                     {
-                        string[] connectionid = System.IO.File.ReadAllLines(HttpContext.Current.Server.MapPath("~/tmp.txt"));
+                        string[] connectionid = File.ReadAllLines(Utility.TempDataUrl + SessionId);
                         if (connectionid.Length > 0)
                         {
-
+                            HttpContext.Current.Session[_clientHubConnectionId] = connectionid[0];
                             return connectionid[0];
                         }
                         else
@@ -242,51 +244,19 @@ namespace WeaponAndWizardry.Code
                             return null;
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         return null;
                     }
                 }
                 else
                 {
-                    if (String.IsNullOrWhiteSpace((string)HttpContext.Current.Session[_clientHubConnectionId]))
-                    {
-
-                        try
-                        {
-                            string[] connectionid = System.IO.File.ReadAllLines(HttpContext.Current.Server.MapPath("~/tmp.txt"));
-                            if (connectionid.Length > 0)
-                            {
-                                HttpContext.Current.Session[_clientHubConnectionId] = connectionid[0];
-                                return connectionid[0];
-                            }
-                            else
-                            {
-                                return null;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            return null;
-                        }
-                    }
-                    else
-                    {
-                        return (string)HttpContext.Current.Session[_clientHubConnectionId];
-                    }
+                    return (string)HttpContext.Current.Session[_clientHubConnectionId];
                 }
             }
             set
             {
-                // If from SignalR connection
-                if (HttpContext.Current.Session == null)
-                {
-                    System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/tmp.txt"), value);
-                }
-                else
-                {
-                    HttpContext.Current.Session[_clientHubConnectionId] = value;
-                }
+                HttpContext.Current.Session[_clientHubConnectionId] = value;
             }
         }
 
@@ -375,7 +345,7 @@ namespace WeaponAndWizardry.Code
 
         /// <summary>
         /// Returns the Session object of type List<int>
-        /// Which is the unsigned int data for each choice 
+        /// Which is the unsigned int data for each choice
         /// picked by the player previously
         /// </summary>
         public static List<uint> ChoicesPicked
@@ -395,9 +365,9 @@ namespace WeaponAndWizardry.Code
         }
 
         /// <summary>
-        /// Returns the Session object of type Guid
+        /// Returns the Session object of type Guid which is the session id
         /// </summary>
-        public static Guid Guid
+        public static Guid SessionId
         {
             get
             {
@@ -482,7 +452,20 @@ namespace WeaponAndWizardry.Code
             Stats = null;
             ChoiceButtons = null;
             ChoicesPicked = null;
-            Guid = Guid.Empty;
+        }
+
+        /// <summary>
+        /// Links the SignalR ConnectionId with the Clients SessionId
+        /// through the servers filesystem.
+        /// </summary>
+        /// <param name="sessionid">The session id to link with</param>
+        /// <param name="connectionid">The connection id to link with</param>
+        public static void LinkSessionIdWithConnectonId(string sessionid, string connectionid)
+        {
+            if (File.Exists(Utility.TempDataUrl + sessionid))
+            {
+                File.WriteAllText(Utility.TempDataUrl + sessionid, connectionid);
+            }
         }
     }
 }

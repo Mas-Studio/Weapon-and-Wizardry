@@ -33,6 +33,10 @@ namespace WeaponAndWizardry.Code
             {
                 Id = Guid.NewGuid();
             }
+            else
+            {
+                Id = id;
+            }
             ChoicesPicked = new List<uint>();
             if (choicesPicked.Count > 0)
             {

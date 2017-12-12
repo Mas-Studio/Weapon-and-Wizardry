@@ -42,7 +42,7 @@ namespace WeaponAndWizardry
             try
             {
                 SessionHandler.SaveId = TextBox_SaveDataCode.Text;
-                string[] filesPath = Directory.GetFiles(Server.MapPath("~/PlayerSaveData/"), SessionHandler.SaveId);
+                string[] filesPath = Directory.GetFiles(Utility.PlayerSaveDataUrl, SessionHandler.SaveId);
                 for (int i = 0; i < filesPath.Length; i++)
                 {
                     if (Path.GetFileName(filesPath[i]).Equals(SessionHandler.SaveId))

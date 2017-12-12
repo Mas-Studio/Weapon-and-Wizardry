@@ -6,11 +6,24 @@ using System.Web.UI.WebControls;
 
 namespace WeaponAndWizardry.Code
 {
+    /// <summary>
+    /// Provides utility functions and properties used in this project.
+    /// </summary>
     public static class Utility
     {
         /// <summary>
+        /// Gets the url of the TempData folder
+        /// </summary>
+        public static string TempDataUrl { get; } = HttpContext.Current.Server.MapPath("~/TempData/");
+
+        /// <summary>
+        /// Gets the url of the PlayerSaveData folder
+        /// </summary>
+        public static string PlayerSaveDataUrl { get; } = HttpContext.Current.Server.MapPath("~/PlayerSaveData/");
+
+        /// <summary>
         /// Creates a deep copy of the Image object
-        /// Author: 
+        /// Author:
         ///     Name: Jia Qi Lee (George) Date: 2017-11-15
         /// </summary>
         /// <param name="image">The image to copy</param>
